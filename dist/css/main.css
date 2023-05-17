@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+}
+
 html {
   font-size: 15px;
   font-family: "Lexend Deca", sans-serif;
@@ -13,6 +18,85 @@ html {
   line-height: 1.5;
 }
 
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+}
+
 main {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card--borderRoundedFirst {
+  border-radius: 6px 0 0 6px;
+}
+.card--borderRoundedLast {
+  border-radius: 0 6px 6px 0;
+}
+
+.card {
+  width: 250px;
+  padding: 35px;
+}
+.card__title {
+  margin: 20px 0;
+}
+.card__footer {
+  margin-top: 70px;
+}
+
+.button {
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 60px;
+}
+
+.card--primary {
+  background-color: hsl(31, 77%, 52%);
+}
+.card--secondary {
+  background-color: hsl(184, 100%, 22%);
+}
+.card--tertiary {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.card__title {
+  color: hsl(0, 0%, 95%);
+}
+.card__text {
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.button {
+  background-color: hsl(0, 0%, 95%);
+}
+.button--primary {
+  color: hsl(31, 77%, 52%);
+}
+.button--secondary {
+  color: hsl(184, 100%, 22%);
+}
+.button--tertiary {
+  color: hsl(179, 100%, 13%);
+}
+
+.button:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 95%);
+  border: solid 2px hsl(0, 0%, 95%);
 }

@@ -9,13 +9,20 @@
 $font-bigShouldersDisplay: "Big Shoulders Display", cursive;
 $font-lexendDeca: "Lexend Deca", sans-serif;
 
-// color
-$color-primary: hsl(31, 77%, 52%);
-$color-secondary: hsl(184, 100%, 22%);
-$color-tertiary: hsl(179, 100%, 13%);
+// color's name
+$color-BrightOrange: hsl(31, 77%, 52%);
+$color-DarkCyan: hsl(184, 100%, 22%);
+$color-VeryDarkCyan: hsl(179, 100%, 13%);
+$color-TransparentWhite: hsla(0, 0%, 100%, 0.75);
+$color-VeryLightGray: hsl(0, 0%, 95%);
 
-$color-paragraph: hsla(0, 0%, 100%, 0.75);
-$color-text: hsl(0, 0%, 95%);
+// color
+$color-primary: $color-BrightOrange;
+$color-secondary: $color-DarkCyan;
+$color-tertiary: $color-VeryDarkCyan;
+$color-text: $color-TransparentWhite;
+$color-title: $color-VeryLightGray;
+$color-button: $color-VeryLightGray;
 
 // #base
 * {
@@ -24,6 +31,12 @@ $color-text: hsl(0, 0%, 95%);
     padding: 0;
 }
 
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+// #typography
 html {
     font-size: 15px;
     font-family: $font-lexendDeca;
@@ -31,12 +44,97 @@ html {
     line-height: 1.5;
 }
 
+.card__title {
+    font-family: $font-bigShouldersDisplay;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
 // #layout
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+}
 main {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+footer {
+    display: flex;
+    justify-content: center;
 }
 
 // #components
+.card {
+    $border-rounded: 6px;
+
+    &--borderRoundedFirst {
+        border-radius: $border-rounded 0 0 $border-rounded;
+    }
+    &--borderRoundedLast {
+        border-radius: 0 $border-rounded $border-rounded 0;
+    }
+}
+
+.card {
+    width: 250px;
+    padding: 35px;
+
+    &__title {
+        margin: 20px 0;
+    }
+    &__footer {
+        margin-top: 70px;
+    }
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 60px;
+}
 
 // #theme
+.card {
+    &--primary {
+        background-color: $color-primary;
+    }
+    &--secondary {
+        background-color: $color-secondary;
+    }
+    &--tertiary {
+        background-color: $color-tertiary;
+    }
+}
+
+.card {
+    &__title {
+        color: $color-title;
+    }
+    &__text {
+        color: $color-text;
+    }
+}
+
+.button {
+    background-color: $color-button;
+
+    &--primary {
+        color: $color-primary;
+    }
+    &--secondary {
+        color: $color-secondary;
+    }
+    &--tertiary {
+        color: $color-tertiary;
+    }
+}
+
+.button:hover {
+    background-color: transparent;
+    color: $color-button;
+    border: solid 2px $color-button;
+}

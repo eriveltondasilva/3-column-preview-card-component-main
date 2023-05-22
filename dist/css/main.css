@@ -32,20 +32,15 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-}
-
-.card--borderRoundedFirst {
-  border-radius: 6px 0 0 6px;
-}
-.card--borderRoundedLast {
-  border-radius: 0 6px 6px 0;
+  margin: 20px;
 }
 
 .card {
@@ -57,6 +52,13 @@ footer {
 }
 .card__footer {
   margin-top: 70px;
+}
+
+.border--first {
+  border-radius: 12px 0 0 12px;
+}
+.border--last {
+  border-radius: 0 12px 12px 0;
 }
 
 .button {
@@ -99,4 +101,26 @@ footer {
   background-color: transparent;
   color: hsl(0, 0%, 95%);
   border: solid 2px hsl(0, 0%, 95%);
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .card {
+    width: 300px;
+  }
+  .card__footer {
+    margin-top: 30px;
+  }
+  .footer {
+    margin: 10px;
+  }
+  .border--first {
+    border-radius: 12px 12px 0 0;
+  }
+  .border--last {
+    border-radius: 0 0 12px 12px;
+  }
 }

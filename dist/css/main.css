@@ -12,22 +12,17 @@ body {
 }
 
 html {
-  font-size: 15px;
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
+  font: 400 15px/1.5 "Lexend Deca", sans-serif;
 }
 
 .card__title {
-  font-family: "Big Shoulders Display", cursive;
-  font-size: 2.5rem;
+  font: 2.5rem "Big Shoulders Display", cursive;
   text-transform: uppercase;
 }
 
 body {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template: 1fr auto/1fr;
 }
 
 main {
@@ -54,19 +49,25 @@ footer {
   margin-top: 70px;
 }
 
-.border--first {
-  border-radius: 12px 0 0 12px;
+.card:first-child {
+  border-radius: 8px 0 0 8px;
 }
-.border--last {
-  border-radius: 0 12px 12px 0;
+.card:last-child {
+  border-radius: 0 8px 8px 0;
 }
 
 .button {
-  text-decoration: none;
-  padding: 10px 24px;
   border-radius: 60px;
+  padding: 10px 24px;
+  text-decoration: none;
 }
 
+.card__title {
+  color: hsl(0, 0%, 95%);
+}
+.card__text {
+  color: hsla(0, 0%, 100%, 0.75);
+}
 .card--primary {
   background-color: hsl(31, 77%, 52%);
 }
@@ -75,13 +76,6 @@ footer {
 }
 .card--tertiary {
   background-color: hsl(179, 100%, 13%);
-}
-
-.card__title {
-  color: hsl(0, 0%, 95%);
-}
-.card__text {
-  color: hsla(0, 0%, 100%, 0.75);
 }
 
 .button {
@@ -96,11 +90,10 @@ footer {
 .button--tertiary {
   color: hsl(179, 100%, 13%);
 }
-
 .button:hover {
   background-color: transparent;
-  color: hsl(0, 0%, 95%);
   border: solid 2px hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 95%);
 }
 
 @media screen and (max-width: 750px) {
@@ -114,13 +107,13 @@ footer {
   .card__footer {
     margin-top: 30px;
   }
+  .card:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+  .card:last-child {
+    border-radius: 0 0 8px 8px;
+  }
   .footer {
     margin: 10px;
-  }
-  .border--first {
-    border-radius: 12px 12px 0 0;
-  }
-  .border--last {
-    border-radius: 0 0 12px 12px;
   }
 }

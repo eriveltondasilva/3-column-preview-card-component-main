@@ -9,7 +9,7 @@
 // #variables
 // fonts
 $font-bigShouldersDisplay: "Big Shoulders Display", cursive;
-$font-lexendDeca: "Lexend Deca", sans-serif;
+$font-lexendDeca         : "Lexend Deca", sans-serif;
 
 // color's name
 $color-BrightOrange    : hsl(31, 77%, 52%);
@@ -27,8 +27,22 @@ $color-title    : $color-VeryLightGray;
 $color-button   : $color-VeryLightGray;
 
 // other variables
-$border    : 12px;
-$breakpoint: 750px;
+$border     : 8px;
+$breakpoint : 750px;
+
+
+// #function/mixin
+@mixin color($property: 'color') {
+    &--primary {
+        #{$property}: $color-primary;
+    }
+    &--secondary {
+        #{$property}: $color-secondary;
+    }
+    &--tertiary {
+        #{$property}: $color-tertiary;
+    }
+}
 
 
 // #base
@@ -46,25 +60,21 @@ body {
 
 // #typography
 html {
-    font-size  : 15px;
-    font-family: $font-lexendDeca;
-    font-weight: 400;
-    line-height: 1.5;
+    font: 400 15px/1.5 $font-lexendDeca;
 }
 
 .card__title {
-    font-family   : $font-bigShouldersDisplay;
-    font-size     : 2.5rem;
+    font: 2.5rem $font-bigShouldersDisplay;
     text-transform: uppercase;
 }
 
 
 // #layout
 body {
-    display              : grid;
-    grid-template-columns: 1fr;
-    grid-template-rows   : 1fr auto;
+    display: grid;
+    grid-template: 1fr auto / 1fr;
 }
+
 main {
     display        : flex;
     align-items    : center;
@@ -93,35 +103,24 @@ footer {
     }
 }
 
-.border {
-    &--first {
+// código para acrescentar bordas no primeiro e no último card quando estiverem na horizontal
+.card {
+    &:first-child {
         border-radius: $border 0 0 $border;
     }
-    &--last {
+    &:last-child {
         border-radius: 0 $border $border 0;
     }
 }
 
 .button {
-    text-decoration: none;
-    padding        : 10px 24px;
     border-radius  : 60px;
+    padding        : 10px 24px;
+    text-decoration: none;
 }
 
 
 // #theme
-.card {
-    &--primary {
-        background-color: $color-primary;
-    }
-    &--secondary {
-        background-color: $color-secondary;
-    }
-    &--tertiary {
-        background-color: $color-tertiary;
-    }
-}
-
 .card {
     &__title {
         color: $color-title;
@@ -129,54 +128,52 @@ footer {
     &__text {
         color: $color-text;
     }
+
+    // cores "primary, secondary e tertiary" aplicadas no @background-color nas classes "&--primary, &--secondary e &--tertiary"
+    @include color(background-color);
 }
 
 .button {
     background-color: $color-button;
 
-    &--primary {
-        color: $color-primary;
-    }
-    &--secondary {
-        color: $color-secondary;
-    }
-    &--tertiary {
-        color: $color-tertiary;
-    }
-}
+    // cores "primary, secondary e tertiary" aplicadas no @background-color nas classes "&--primary, &--secondary e &--tertiary"
+    @include color;
 
-.button:hover {
-    background-color: transparent;
-    color           : $color-button;
-    border          : solid 2px $color-button;
+    &:hover {
+        background-color: transparent;
+        border          : solid 2px $color-button;
+        color           : $color-button;
+    }
 }
 
 
 // #media query
 @media screen and (max-width: $breakpoint) {
+    // 
     main {
         flex-direction: column;
         padding-top   : 20px;
     }
 
     .card {
-        width  : 300px;
+        width: 300px;
 
         &__footer {
             margin-top: 30px;
         }
     }
 
-    .footer {
-        margin: 10px;
-    }
-
-    .border {
-        &--first {
+    // código para acrescentar bordas no primeiro e no último card quando estiverem na vertical
+    .card {
+        &:first-child {
             border-radius: $border $border 0 0;
         }
-        &--last {
+        &:last-child {
             border-radius: 0 0 $border $border;
         }
+    }
+
+    .footer {
+        margin: 10px;
     }
 }

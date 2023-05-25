@@ -18,14 +18,15 @@
 
 </head>
 
+
 <body>
 
     <main id="app">
 
         <section
-        v-for="(card, index) in cards"
+        v-for="card in cards"
         class="card"
-        :class="['card--' + card.class, {'border--first': index === 0, 'border--last': index === cards.length - 1}]"
+        :class="['card--' + card.class]"
         >
 
             <div class="card-icon">
@@ -45,13 +46,12 @@
             </div>
 
         </section>
-        <!-- TODO: colocar as bordas -->
 
     </main>
 
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
+        Coded by <a href="https://www.instagram.com/erivelton.dsilva/">Erivelton Silva</a>.
     </footer>
 
 
@@ -62,7 +62,6 @@
         createApp({
             data() {
                 return {
-                    icons: "",
                     cards: [
                         {
                             class: "primary",

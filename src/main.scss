@@ -2,25 +2,23 @@
 
 
 
-// #IMPORTS DE FONTS
+// #SETTING
+// imports
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
 
-
-
-// #VARIABLES
 // fonts
 $font-bigShouldersDisplay: "Big Shoulders Display", cursive;
 $font-lexendDeca         : "Lexend Deca", sans-serif;
 
-// color's name
+// color names
 $color-BrightOrange    : hsl(31, 77%, 52%);
 $color-DarkCyan        : hsl(184, 100%, 22%);
 $color-VeryDarkCyan    : hsl(179, 100%, 13%);
 $color-TransparentWhite: hsla(0, 0%, 100%, 0.75);
 $color-VeryLightGray   : hsl(0, 0%, 95%);
 
-// color
+// colors
 $color-primary  : $color-BrightOrange;
 $color-secondary: $color-DarkCyan;
 $color-tertiary : $color-VeryDarkCyan;
@@ -28,7 +26,7 @@ $color-text     : $color-TransparentWhite;
 $color-title    : $color-VeryLightGray;
 $color-button   : $color-VeryLightGray;
 
-// other variables
+// other
 $border     : 8px;
 $breakpoint : 750px;
 

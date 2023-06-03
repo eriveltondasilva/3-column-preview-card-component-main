@@ -1,15 +1,13 @@
 @charset 'utf-8';
 
-
-
 // #SETTING
 // imports
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
 
 // fonts
-$font-bigShouldersDisplay: "Big Shoulders Display", cursive;
-$font-lexendDeca         : "Lexend Deca", sans-serif;
+$font-bigShouldersDisplay: ('Big Shoulders Display', cursive);
+$font-lexendDeca         : ('Lexend Deca', sans-serif);
 
 // color names
 $color-BrightOrange    : hsl(31, 77%, 52%);
@@ -63,7 +61,7 @@ body {
 
 // #TYPOGRAPHY
 html {
-    font: 400 15px/1.5 $font-lexendDeca;
+    font: 400 15px / 1.5 $font-lexendDeca;
 }
 
 .card__title {
@@ -122,6 +120,7 @@ footer {
     border-radius  : 60px;
     padding        : 10px 24px;
     text-decoration: none;
+    transition: 1s;
 }
 
 

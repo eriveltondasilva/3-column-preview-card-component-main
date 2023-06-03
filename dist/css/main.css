@@ -60,6 +60,7 @@ footer {
   border-radius: 60px;
   padding: 10px 24px;
   text-decoration: none;
+  transition: 1s;
 }
 
 .card__title {
